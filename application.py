@@ -26,7 +26,7 @@ def upload_image():
         file.save(FILE_PATH)
         predict_obj = PredictImage(FILE_PATH)
         prediction = predict_obj.predict()
-        return render_template('complete.html', image=FILE_PATH, imageresults=prediction)
+        return render_template('complete.html', image=FILE_PATH, imageresults=list(prediction))
 
 if __name__=="__main__":
     app.run(host="0.0.0.0", debug=True)    
